@@ -1,4 +1,5 @@
-let total = 0
+let total = 0,
+	idCounter = 0
 
 const createItem = (itemNumber, itemValue) => {
 	const item = document.createElement(`div`)
@@ -16,6 +17,7 @@ const createItem = (itemNumber, itemValue) => {
 						<div class="item-btn del-btn" id="delete">Done</div>`
 
 	document.querySelector('.list').appendChild(item)
+	total++
 }
 
 document.addEventListener('click', (e) => {
@@ -28,7 +30,7 @@ document.addEventListener('click', (e) => {
 				itemName.removeAttribute('style')
 			}, 2000)
 		} else {
-			createItem(++total, itemName.value)
+			createItem(++idCounter, itemName.value)
 			itemName.value = ''
 			// Set total
 			document.getElementById(
