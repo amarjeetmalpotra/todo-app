@@ -2,16 +2,41 @@ body {
 	padding: 0;
 	margin: 0;
 	user-select: none;
-	background-color: #111;
 	font: 1.28rem 'Consolas';
-	color: #fff;
 }
-img {
-	height: 4rem;
+footer {
+	display: flex;
 	position: fixed;
-	bottom: 0.5rem;
 	right: 0.5rem;
+	bottom: 0.5rem;
+	align-items: center;
+	#mode {
+		width: 4rem;
+		height: 2rem;
+		background-color: #808080;
+		border-radius: 2rem;
+		.dot {
+			position: absolute;
+			width: 1.6rem;
+			height: 1.6rem;
+			border-radius: 50%;
+			background-color: #fff;
+			transition: transform 150ms ease-in-out;
+			transform: translate(0.2rem, 0.2rem);
+			pointer-events: none;
+		}
+	}
+	img {
+		height: 4rem;
+		filter: drop-shadow(0 0 0.5rem #111);
+	}
+	& div,
+	& img {
+		margin-left: 2rem;
+		cursor: pointer;
+	}
 }
+
 .container {
 	padding: 3rem 12rem;
 }
@@ -25,7 +50,7 @@ img {
 	width: 100%;
 	padding-left: 10px;
 	font-size: 1.28rem;
-	color: #fff;
+	color: inherit;
 	border: none;
 	border-bottom: 3px solid #cacaca;
 	outline: none;
@@ -36,7 +61,7 @@ img {
 	}
 }
 .item-btn {
-	padding: 0.8rem 5% 0 5%;
+	padding: 1rem 5% 0 5%;
 	border-bottom: 3px solid #007bff;
 	cursor: pointer;
 	transition: all 150ms ease;
@@ -67,5 +92,9 @@ img {
 	}
 	.container {
 		padding: 5rem 1.5rem;
+	}
+	footer div,
+	footer img {
+		margin-left: 1rem;
 	}
 }

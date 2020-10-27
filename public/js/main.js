@@ -61,5 +61,28 @@ document.addEventListener('click', (e) => {
 			document.getElementById(
 				'todo'
 			).innerHTML = `Todo <span class="blue">${total}</span>`
+	} else if (e.target && e.target.id == 'mode') {
+		// Dark mode toggle
+		if (
+			e.target.childNodes[0].style.transform ==
+			'translate(2.2rem, 0.2rem)'
+		) {
+			document.querySelector('.dot').style.transform =
+				'translate(0.2rem, 0.2rem)'
+			document.body.style.backgroundColor = 'initial'
+			document.body.style.color = 'initial'
+			document.querySelector('.dot').style.backgroundColor = '#fff'
+		} else {
+			document.querySelector('.dot').style.transform =
+				'translate(2.2rem, 0.2rem)'
+			document.body.style.backgroundColor = '#111'
+			document.body.style.color = '#fff'
+			document.querySelector('.dot').style.backgroundColor = '#111'
+		}
+	} else if (e.target && e.target.id == 'clear') {
+		// Clear all
+		document.querySelector('.list').innerHTML = ''
+		total = 0
+		document.getElementById('todo').innerHTML = 'Todo'
 	}
 })
